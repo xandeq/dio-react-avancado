@@ -1,38 +1,36 @@
-import React, { Component } from 'react'
-import Counter from './Counter'
+import React, { Component } from "react";
+import Counter from "./Counter";
 
 const Buttons = ({ increment, decrement, count }) => (
   <div>
-      <h1>Valor atual: {count}</h1>
+    <div>
+      <h1>Valr atual {count}</h1>
       <div>
         <button onClick={increment}>Adicionar 1</button>
       </div>
       <div>
         <button onClick={decrement}>Remover 1</button>
       </div>
+    </div>
   </div>
 )
 
 class App extends Component {
-
-  render () {
+  render() {
     return (
       <div>
-        <Counter render={
-          ({ increment, decrement, count }) => (
+        <Counter
+          render={({ increment, decrement, count }) => (
             <Buttons
               increment={increment}
-              decrement={decrement}
+              increment={increment}
               count={count}
             />
-          )
-        }>
-
+          )}>
         </Counter>
       </div>
-    )
+    );
   }
 }
 
-
-export default App
+export default App;
