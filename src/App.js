@@ -1,50 +1,23 @@
-import React, { useState, useEffect, Fragment } from "react";
-import { ThemeContext, themes } from "./Theme";
-import Card from "./Card";
-import Twitter from "./Twitter";
+import React, { Fragment } from "react";
 
-const store = ["", "", ""];
+const store = [{ type: "Roupa" }, { type: "Calçado" }, { type: "Camiseta" }];
 
-function Column() {
+function Column({ type }) {
   return (
-      <tr>
-        <td>tesnis</td>
-        <td>roupa</td>
-      </tr>
+    <tr>
+      <td>{type.name.console}</td>
+    </tr>
   );
 }
 
 function App() {
-  const [token, setToken] = useState();
-
-  useEffect(() => {
-    setTimeout(() => {
-      setToken("34534534534");
-    }, 4000);
-  }, [setToken]);
-
   const renderColumns = (element, key) => {
-    <Fragment key={'column: ${key} '}>
-      <Column />
-    </Fragment>
+    <Fragment key={`column-${key}`}>
+      <Column type={element.type} />
+    </Fragment>;
   };
 
-  return (
-    // <ThemeContext.Provider value={{...themes.primary, token }}>
-    //   <Card />
-    // </ThemeContext.Provider>
-    // <>
-    //   <div>
-    //     ReactJs Avançado
-    //     <Card />
-    //   </div>
-    //   <div>
-    //     ReactJs Avançado
-    //     <Card />
-    //   </div>
-    // </>
-    <table>{store.map(renderColumns)}</table>
-  );
+  return (<>teste<table>{store.map(renderColumns)}</table></>);
 }
 
 export default App;
