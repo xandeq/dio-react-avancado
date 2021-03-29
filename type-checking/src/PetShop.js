@@ -1,23 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-function PetShop (props) {
-
-  const { dogs, cats, customers, customerName, onClick } = props
+function PetShop(props) {
+  const { dogs, cats, customers, customerName, onClick } = props;
 
   return (
     <div>
-      <h1>Dogs: {dogs}</h1>
-      <h1>Cats: {cats}</h1>
-      <div>
-        Quantidade de clientes: {customers}
-      </div>
-      <div>
-        Nome do cliente: {customerName}
-      </div>
+      <h1>DOGS: {dogs}</h1>
+      <h2>CATS: {cats}</h2>
+      <div>QUANTIDADE DE CLIENTES: {customers}</div>
+      <div>NOME DO CLIENTE: {customerName}</div>
       <button onClick={onClick}>Iniciar banho</button>
     </div>
-  )
+  );
 }
 
 PetShop.defaultProps = {
@@ -32,7 +27,6 @@ PetShop.propTypes = {
   customerName: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   status: PropTypes.oneOf(["Completed", "Disabled"])
-}
+};
 
-
-export default PetShop
+export default PetShop;

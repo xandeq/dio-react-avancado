@@ -1,19 +1,12 @@
-import React from 'react'
-import PetShop from './PetShop'
+import React from "react";
+import PetShop from "./PetShop";
 
-function App () {
+function App() {
   const handleClick = () => {
-    console.log('Iniciando o banho...')
+    console.log('Iniciar banho');
   }
-  
-  return (
-    <PetShop
-      dogs={2}
-      customerName="Bruno Carneiro"
-      onClick={handleClick}
-      status="done"
-    />
-  )
+
+  return <PetShop dogs={2} status="Completed" onClick={handleClick} customerName={"Alexandre Queiroz"} />;
 }
 
-export default App
+export default App;
