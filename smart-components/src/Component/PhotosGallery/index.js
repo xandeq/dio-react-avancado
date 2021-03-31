@@ -7,8 +7,8 @@ function PhotosGallery(props) {
   const [gallery, setGallery] = useState(photos)
   
   const handleRemove = (key) => {
-    const newGallery = gallery.filter((img, index) => index !== key) 
-    setGallery(newGallery)
+    const newGallery = gallery.filter((img, index) => index != key);
+    setGallery(newGallery);
   }
 
   const renderPhotos = (img, key) => {
